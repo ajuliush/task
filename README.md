@@ -51,7 +51,7 @@ Authorization: Bearer <your-token> `
 - ` Content-Type: application/json
 Authorization: Bearer <your-token> `
 -   `
- "name": "Sample Product",
+{ "name": "Sample Product",
     "sku": "PROD1234",
     "symbology": "ABC",
     "brand_id": 1,
@@ -88,6 +88,7 @@ Authorization: Bearer <your-token> `
             "user": "user2"
         }
     ]
+}
  `
  ## Show product Endpoin
 - `method: get `
