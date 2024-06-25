@@ -78,20 +78,26 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = Product::where('is_active', true)
-        ->orderBy('id', 'DESC')
-        ->with([
-            'brand', 
-            'category', 
-            'unit', 
-            'tax', 
-            'quantities.warehouse',
-            'productAttachments'
-        ])
-        ->get();
+        try {
+            // Fetch the product by its ID, ensuring it is active and loading all necessary relationships
+            $products = Product::where('is_active', true)
+            ->orderBy('id', 'DESC')
+            ->with([
+                'brand', 
+                'category', 
+                'unit', 
+                'tax', 
+                'quantities.warehouse',
+                'productAttachments'
+            ])
+            ->get();
+            return response()->json(['message' => 'Products fetch successfully', 'products' => $products], 201);
     
-
-        return response()->json(['message' => 'Products fetch successfully', 'products' => $products], 201);
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return response()->json(['error' => 'Product not found'], 404);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to fetch product'], 500);
+        }
     }
 
     public function show($id)
