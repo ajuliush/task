@@ -44,9 +44,10 @@ This guide provides instructions to set up the Laravel project from the GitHub r
 
 By default, the application will be accessible at `http://localhost:8000`.
 
-  11. Register end point:
-    ```bash
-    POST /api/register
+`Register end point `
+
+
+` POST /api/register
     Content-Type: application/json
 
     {
@@ -54,7 +55,13 @@ By default, the application will be accessible at `http://localhost:8000`.
     "email":"ajuliush2@gmail.com",
     "password":"password",
     "password_confirmation": "password"
-    }
+ }`
+
+
+
+  11. Register end point:
+    ```bash
+    
 ```
 
   12. Login endpoint:
@@ -72,5 +79,5 @@ By default, the application will be accessible at `http://localhost:8000`.
     ```bash
         POST /api/logout
     Content-Type: application/json
-    
+
 ```
