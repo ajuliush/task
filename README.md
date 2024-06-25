@@ -25,6 +25,8 @@
  ## Login Endpoin
  - `method: post `
  - `api/login`
+ - ` Content-Type: application/json
+Authorization: Bearer <your-token> `
 -   `
 "email":"ajuliush2@gmail.com",
 "password":"password",
@@ -32,7 +34,6 @@
   ## Lgout Endpoin
   - `method: post `
  - `api/logout`
--   `
-"email":"ajuliush2@gmail.com",
-"password":"password",
- `
+ - ` Content-Type: application/json
+Authorization: Bearer <your-token> `
+
