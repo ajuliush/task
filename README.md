@@ -44,32 +44,33 @@ This guide provides instructions to set up the Laravel project from the GitHub r
 
 By default, the application will be accessible at `http://localhost:8000`.
 
-  11. Start the Laravel development server:
+  11. Register end point:
     ```bash
     POST /api/register
-Content-Type: application/json
+    Content-Type: application/json
 
-{
-"name":"juliush",
-"email":"ajuliush2@gmail.com",
-"password":"password",
-"password_confirmation": "password"
-}
+    {
+    "name":"juliush",
+    "email":"ajuliush2@gmail.com",
+    "password":"password",
+    "password_confirmation": "password"
+    }
+```
 
-    ```
-
-  12. Start the Laravel development server:
+  12. Login endpoint:
     ```bash
-    POST /api/register
-Content-Type: application/json
 
-POST /api/login
-Content-Type: application/json
+    POST /api/login
+    Content-Type: application/json
 
-{
-    "email": "ajuliush2@gmail.com",
-    "password": "password"
-}
-
-
-    ```
+    {
+        "email": "ajuliush2@gmail.com",
+        "password": "password"
+    }
+```
+     13. Start the Laravel development server:
+    ```bash
+        POST /api/logout
+    Content-Type: application/json
+    
+```
